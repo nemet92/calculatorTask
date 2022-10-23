@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test2/widget/customContainer.dart';
 import 'package:test2/widget/mathematicalFunction.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -169,38 +170,4 @@ class _MyHomePageState extends State<MyHomePage> {
       height: 10,
     );
   }
-}
-
-class CustomContainer extends StatelessWidget {
-  CustomContainer({
-    Key? key,
-    required this.onTap,
-    required this.text,
-  }) : super(key: key);
-  final String text;
-  Function onTap;
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        onTap();
-      },
-      child: Container(
-        height: MediaQuery.of(context).size.height * 0.1,
-        width: MediaQuery.of(context).size.width * 0.2,
-        decoration: const BoxDecoration(
-            color: Colors.transparent, shape: BoxShape.circle),
-        child: Center(
-          child: Text(
-            text,
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-enum TextList {
-  C,
 }
